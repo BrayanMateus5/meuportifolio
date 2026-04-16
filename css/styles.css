@@ -1,0 +1,277 @@
+/*as variáveis globais do projeto*/
+:root {
+
+    --bg-color: #121212;
+    --bg-card: #1e1e1e;
+
+    /*texto*/
+    --text-main: #e0e0e0;
+    --text-light: #a0a0a0;
+
+    /*Cor destaque*/
+    --primary-color: #3b82f6;
+    --primary-color-hover: #60a5fa;
+
+    --border-radius: 8px;
+    --transition-duration: 0.3s;
+
+}
+
+/*reset básico*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Comportamento para passar suave */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* O cabeçalho*/
+
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Navegação */
+nav {
+    padding: 1.5rem 5%;
+    background-color: rgba(18, 18, 18, 0.95);
+    position: sticky;
+    /*desgruda do topo*/
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    List-style: none;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-duration);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+#sobre {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+#sobre h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.destaque {
+    color: var(--primary-color);
+}
+
+#sobre p {
+    max-width: 600px;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/*os botões*/
+
+button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color var(--transition-duration);
+}
+
+button:hover {
+    background-color: var(--primary-color-hover);
+    transform: translateY(-3px);
+    /*efeito de elevação*/
+}
+
+/*O MAIN*/
+
+section {
+    padding: 5rem 10%
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+/*parte de skills*/
+
+#skills {
+    background-color: var(--bg-card);
+}
+
+.hard-skills,
+.soft-skills {
+    margin-bottom: 2rem;
+}
+
+.hard-skills h3,
+.soft-skills h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+/*O DO CSS*/
+
+#projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+#projetos h2 {
+    grid-column: 1 / -1;
+}
+
+.card-projeto {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    border: 1px solid #333;
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.card-projeto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-projeto a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-duration);
+}
+
+.card-projeto a:hover {
+    text-decoration: underline;
+}
+
+/*trajetória*/
+#trajetoria {
+    background-color: var(--bg-card);
+}
+
+#trajetoria article {
+    margin-bottom: 3rem;
+}
+
+#trajetoria ul {
+    list-style-position: inside;
+    color: var(--text-light);
+}
+
+#trajetoria li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+#trajetoria strong {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/*rodapé*/
+
+footer {
+    padding: 4rem 10% 2rem;
+    background-color: #0a0a0a;
+    text-align: center;
+}
+
+footer h2 {
+    margin-bottom: 2rem;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.redes-sociais a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: color var(--transition-duration);
+}
+
+.redes-sociais a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
