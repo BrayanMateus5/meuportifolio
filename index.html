@@ -1,11 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu portifólio</title>
-
+    <title>Brayan | portifólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div id="sobre">
+            <h1>Olá, meu nome é <span class="destaque">Brayan</span></h1>
+            <p>Estudante de Engenharia de Software, com foco em desenvolvimento web e mobile.</p>
+
+            <a href="assets/curriculo.pdf" download="curriculo.pdf">
+                <button>Download Currículo</button>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="Skills">
+            <h2>minhas Skills</h2>
+            <div class="hard-skill">
+                <h3>Hard Skills</h3>
+                <p><strong>Java: </strong> Desenvolvimento de aplicações e lógica de programação</p>
+                <p><strong>HTML/CSS: </strong> Criação de páginas web responsivas e estilizadas</p>
+            </div>
+            <div class="soft-skill">
+                <h3>Soft Skills</h3>
+                <p><strong>Comunicação: </strong> Habilidade para se comunicar de forma clara e eficaz</p>
+                <p><strong>Trabalho em equipe: </strong> Capacidade de colaborar e trabalhar bem com os outros</p>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Meus Projetos</h2>
+            <article class="projeto">
+                <h3>Projeto 1: Gestão de Estoque</h3>
+                <p>Um aplicativo para gerenciar o estoque de produtos, com funcionalidades de criação, edição e exclusão
+                    de itens.</p>
+                <a href="https://github.com/BrayanMateus5/gestao-de-estoque.git" target="_blank">
+                    <button>Ver Projeto</button>
+                </a>
+            </article>
+            <article class="projeto">
+                <h3>Projeto 2: Portfólio Pessoal</h3>
+                <p>Um site pessoal para exibir minhas habilidades, projetos e informações de contato.</p>
+                <a href="https://github.com/BrayanMateus5/meuportifolio.git" target="_blank">
+                    <button>Ver Projeto</button>
+                </a>
+            </article>
+            <article class="projeto">
+                <h3>Projeto 3: jogo da memória PW</h3>
+                <p>Um jogo da memória desenvolvido em HTML, CSS e JavaScript, que será implementado mais funções.</p>
+                <a href="https://github.com/BrayanMateus5/jogo-memoria.git" target="_blank">
+                    <button>Ver Projeto</button>
+                </a>
+            </article>
+            <article class="projeto">
+                <h3>Projeto 4: Sistema de gerenciamento financeiro</h3>
+                <p>Um sistema de gerenciamento financeiro, que será implementado com funcionalidades de controle de
+                    gastos e receitas.</p>
+                <a href="https://github.com/BrayanMateus5/sistema-financeiro.git" target="_blank">
+                    <button>Ver Projeto</button>
+                </a>
+            </article>
+        </section>
+        <section id="Trajetória">
+            <h2>Minha Trajetória</h2>
+
+            <article class="educacao">
+                <h3>Início</h3>
+                <ul>
+                    <li>
+                        <Strong>Técnico em Informática: </Strong><br>
+                        Instituto Federal do Paraná (IFPR) - 2020 a 2023<br>
+                        Formado em técnico em informática, onde adquiri conhecimentos básicos de programação, redes
+                        e hardware.
+                    </li>
+                </ul>
+            </article>
+            <article class="educacao">
+                <h3>Atualmente</h3>
+                <ul>
+                    <li>
+                        <Strong>Bacharelado em Engenharia de Software: </Strong> <br> Instituto Federal do Paraná
+                        (IFPR) - 2024 - previsão de conclusão 2027<br>
+                        Seguindo na área de engenharia de software, onde estou aprofundando meus conhecimentos em
+                        desenvolvimento web, mobile e banco de dados, além de aprender sobre metodologias ágeis e
+                        boas práticas de desenvolvimento.
+                    </li>
+
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <h2>Contato</h2>
+        <div class="redes-sociais">
+            <a href="mailto:mateusbrayan73@gmail.com" target="_blank">
+                <button>Email</button>
+            </a>
+            <a href="https://github.com/BrayanMateus5" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/brayan-mateus-5b9b1b1b3/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 
 </html>
