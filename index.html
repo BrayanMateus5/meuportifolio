@@ -14,14 +14,14 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#sobre" data-i18n="menu_sobre">Sobre</a></li>
+                <li><a href="#projetos" data-i18n="menu_projetos">Projetos</a></li>
+                <li><a href="#contato" data-i18n="menu_contato">Contato</a></li>
             </ul>
         </nav>
 
         <div id="sobre">
-            <img src="assets/eu-foto.jpg" alt="Foto de Brayan" class="foto-perfil">
+            <img src="assets/eu-foto.jpeg" alt="Foto de Brayan" class="foto-perfil">
             <h1>Olá, meu nome é <span class="destaque">Brayan</span></h1>
             <p>Estudante de Engenharia de Software, com foco em desenvolvimento web e mobile.</p>
 
@@ -39,6 +39,7 @@
                 <p><strong>Java: </strong> Desenvolvimento de aplicações e lógica de programação</p>
                 <p><strong>HTML/CSS: </strong> Criação de páginas web responsivas e estilizadas</p>
             </div>
+            <br>
             <div class="soft-skill">
                 <h3>Soft Skills</h3>
                 <p><strong>Comunicação: </strong> Habilidade para se comunicar de forma clara e eficaz</p>
@@ -51,14 +52,14 @@
             <article class="projeto">
                 <h3>Projeto 1: Gestão de Estoque</h3>
                 <p>Um aplicativo para gerenciar o estoque de produtos, com funcionalidades de criação, edição e exclusão
-                    de itens.</p>
+                    de itens.</p><br>
                 <a href="https://github.com/BrayanMateus5/gestao-de-estoque.git" target="_blank">
                     <button>Ver Projeto</button>
                 </a>
             </article>
             <article class="projeto">
                 <h3>Projeto 2: Portfólio Pessoal</h3>
-                <p>Um site pessoal para exibir minhas habilidades, projetos e informações de contato.</p>
+                <p>Um site pessoal para exibir minhas habilidades, projetos e informações de contato.</p><br>
                 <a href="https://github.com/BrayanMateus5/meuportifolio.git" target="_blank">
                     <button>Ver Projeto</button>
                 </a>
@@ -66,6 +67,7 @@
             <article class="projeto">
                 <h3>Projeto 3: jogo da memória PW</h3>
                 <p>Um jogo da memória desenvolvido em HTML, CSS e JavaScript, que será implementado mais funções.</p>
+                <br>
                 <a href="https://github.com/BrayanMateus5/jogo-memoria.git" target="_blank">
                     <button>Ver Projeto</button>
                 </a>
@@ -92,7 +94,7 @@
                         e hardware.
                     </li>
                 </ul>
-            </article>
+            </article><br>
             <article class="educacao">
                 <h3>Atualmente</h3>
                 <ul>
@@ -110,7 +112,15 @@
     </main>
 
     <footer id="contato">
-        <h2>Contato</h2>
+        <h2>Entre em contato</h2>
+
+        <form id="form-contato">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu email" required>
+            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
         <div class="redes-sociais">
             <a href="mailto:mateusbrayan73@gmail.com" target="_blank">
                 <button>Email</button>
@@ -124,7 +134,9 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"> </script>
     <script src="script.js"></script>
+    <script src="dicionario.js"></script>
 </body>
 
 </html>
