@@ -1,17 +1,19 @@
+import { dicionario } from './dicionario.js';
+
 const paragrafo = document.querySelector('#sobre p');
 let textoAtual = "Estudante de Engenharia de Software, com foco em desenvolvimento web e mobile."
 let contador = 0;
 
 function digitar() {
     if (contador < textoAtual.length) {
-        paragrafo.innerHTML += textoAtual.charAt(contador);
+        paragrafo.textContent += textoAtual.charAt(contador);
         contador++;
         setTimeout(digitar, 50);
     }
 }
 /*limpa o html e chama a função*/
 if (paragrafo) {
-    paragrafo.innerHTML = "";
+    paragrafo.textContent = '';
     digitar();
 }
 
@@ -24,12 +26,12 @@ if (formContato) {
         /*não recarrega*/
 
         /*puxa o nome*/
-        const nome = document.querySelector('input[name = "name"]').value;
+        const nome = document.querySelector('input[name = "nome"]').value;
 
         /*pop-up*/
         Swal.fire({
-            title: 'Mensagem enviada !',
-            text: 'Muito obrigado' + nome
+            title: dicionario.pt.alerta_sucesso_titulo,
+            text: dicionario.pt.alerta_sucesso_texto + ' ' + nome + '!',
         });
         formContato.reset();
     });
@@ -40,7 +42,7 @@ const menu = document.querySelector('nav');
 window.addEventListener('scroll', function () {
 
     if (window.scrollY > 50) {
-        menu.style.backgroundColor = 'rbga(18, 18, 18, 1)';
+        menu.style.backgroundColor = 'rgba(18, 18, 18, 1)';
     } else {
         menu.style.backgroundColor = 'rgba(18, 18, 0.95)';
     }
@@ -48,14 +50,34 @@ window.addEventListener('scroll', function () {
 
 /*função de troca*/
 function mudarIdioma(idiomaEscolhido) {
-    const elementosParaTraduzir = document.querySelectorAll('[data-18n]');
+    document.querySelectorAll('[data-i18n]').forEach(elemento => {
+        const chave = elemento.getAttribute('data-i18n');
+        const texto = dicionario[idiomaEscolhido][chave] || chave;
 
-    /*busca os elementos*/
-    elementosParaTraduzir.forEach(function (elemento) {
-        let chave = elemento.getAttribute('data-i18n');
-        /*puxa cada palavra*/
-
-        elemento.innerText = dicionario[idiomaEscolhido][chave]
+        if (elemento.placeholder !== undefined) {
+            elemento.placeholder = texto;
+        } else {
+            elemento.textContent = texto;
+        }
     });
+
+    const botoesIdioma = document.querySelectorAll('.idioma');
+    botoesIdioma.forEach(function (botao) {
+        botao.classList.remove('ativo');
+    });
+
+    /*ativa o botão*/
+    document.querySelector('.btn-idioma[data-idioma="' + idiomaEscolhido + '"]').classList.add('ativo');
+
 }
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 50) {
+            sec.classList.add('visible');
+        }
+    });
+});
 

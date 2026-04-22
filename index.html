@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brayan | portifólio</title>
+    <title>Brayan | Portfólio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -13,130 +13,170 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre" data-i18n="menu_sobre">Sobre</a></li>
+
+                <li><a href="#sobre" data-i18n="menu_sobre">Home</a></li>
                 <li><a href="#projetos" data-i18n="menu_projetos">Projetos</a></li>
                 <li><a href="#contato" data-i18n="menu_contato">Contato</a></li>
+
+                <li class="idioma-container">
+                    <button class="btn-idioma ativo" data-idioma="pt" onclick="mudarIdioma('pt')">PT</button>
+                    <span class="separador">|</span>
+                    <button class="btn-idioma" data-idioma="en" onclick="mudarIdioma('en')">EN</button>
+                </li>
             </ul>
         </nav>
-
-        <div id="sobre">
-            <img src="assets/eu-foto.jpeg" alt="Foto de Brayan" class="foto-perfil">
-            <h1>Olá, meu nome é <span class="destaque">Brayan</span></h1>
-            <p>Estudante de Engenharia de Software, com foco em desenvolvimento web e mobile.</p>
-
-            <a href="assets/curriculo.pdf" download="curriculo.pdf">
-                <button>Download Currículo</button>
-            </a>
-        </div>
     </header>
 
     <main>
-        <section id="Skills">
-            <h2>minhas Skills</h2>
+        <section id="sobre">
+            <img src="assets/eu-foto.jpeg" alt="Foto de Brayan" class="foto-perfil" width="200" height="200">
+
+            <h1>
+                <span data-i18n="sobre_titulo">Olá, meu nome é</span> <span class="destaque">Brayan</span>
+            </h1>
+            <p data-i18n="sobre_descricao">Estudante de Engenharia de Software, com foco em desenvolvimento web e
+                mobile.</p>
+
+            <a href="assets/curriculo.pdf" download="curriculo.pdf" class="btn-download"
+                data-i18n="btn_download_cv">Baixar Currículo</a>
+        </section>
+
+        <section id="skills">
+            <h2 data-i18n="titulo_skills">Minhas Skills</h2>
+
             <div class="hard-skill">
-                <h3>Hard Skills</h3>
-                <p><strong>Java: </strong> Desenvolvimento de aplicações e lógica de programação</p>
-                <p><strong>HTML/CSS: </strong> Criação de páginas web responsivas e estilizadas</p>
+                <h3 data-i18n="skills_hard">Hard Skills</h3>
+                <p>
+                    <strong>Java: </strong>
+                    <span data-i18n="skills_java_descricao">Desenvolvimento de aplicações e lógica de
+                        programação</span>
+                </p>
+                <p>
+                    <strong>HTML/CSS: </strong>
+                    <span data-i18n="skills_html_descricao">Criação de páginas web responsivas e estilizadas</span>
+                </p>
             </div>
-            <br>
+
             <div class="soft-skill">
-                <h3>Soft Skills</h3>
-                <p><strong>Comunicação: </strong> Habilidade para se comunicar de forma clara e eficaz</p>
-                <p><strong>Trabalho em equipe: </strong> Capacidade de colaborar e trabalhar bem com os outros</p>
+                <h3 data-i18n="skills_soft">Soft Skills</h3>
+                <p><strong data-i18n="skills_comunicacao">Comunicação: </strong>
+                    <span data-i18n="skills_comunicacao_descricao">Habilidade para se comunicar de forma clara e
+                        eficaz</span>
+                </p>
+                <p><strong data-i18n="skills_trabalho_equipe">Trabalho em equipe: </strong> <span
+                        data-i18n="skills_trabalho_equipe_descricao">Capacidade de colaborar e trabalhar bem
+                        com os outros</span>
+                </p>
             </div>
         </section>
 
         <section id="projetos">
-            <h2>Meus Projetos</h2>
-            <article class="projeto">
-                <h3>Projeto 1: Gestão de Estoque</h3>
-                <p>Um aplicativo para gerenciar o estoque de produtos, com funcionalidades de criação, edição e exclusão
-                    de itens.</p><br>
-                <a href="https://github.com/BrayanMateus5/gestao-de-estoque.git" target="_blank">
-                    <button>Ver Projeto</button>
+            <h2 data-i18n="projetos_titulo">Meus Projetos</h2>
+
+            <article class="card-projeto">
+                <h3 data-i18n="projeto1_titulo">Projeto 1: Gestão de Estoque</h3>
+                <p data-i18n="projeto1_descricao">Um aplicativo para gerenciar o estoque de produtos, com
+                    funcionalidades de criação, edição e exclusão
+                    de itens.</p>
+                <a href="https://github.com/BrayanMateus5/gestao-de-estoque.git" target="_blank"
+                    rel="noopener noreferrer" class="btn-ver-projeto">
+                    Ver Projeto
                 </a>
             </article>
-            <article class="projeto">
-                <h3>Projeto 2: Portfólio Pessoal</h3>
-                <p>Um site pessoal para exibir minhas habilidades, projetos e informações de contato.</p><br>
-                <a href="https://github.com/BrayanMateus5/meuportifolio.git" target="_blank">
-                    <button>Ver Projeto</button>
+            <article class="card-projeto">
+                <h3 data-i18n="projeto2_titulo">Projeto 2: Portfólio Pessoal</h3>
+                <p data-i18n="projeto2_descricao">Um site pessoal para exibir minhas habilidades, projetos e
+                    informações
+                    de contato.</p>
+                <a href="https://github.com/BrayanMateus5/meuportifolio.git" target="_blank" rel="noopener noreferrer"
+                    class="btn-ver-projeto">
+                    Ver Projeto
                 </a>
             </article>
-            <article class="projeto">
-                <h3>Projeto 3: jogo da memória PW</h3>
-                <p>Um jogo da memória desenvolvido em HTML, CSS e JavaScript, que será implementado mais funções.</p>
-                <br>
-                <a href="https://github.com/BrayanMateus5/jogo-memoria.git" target="_blank">
-                    <button>Ver Projeto</button>
+            <article class="card-projeto">
+                <h3 data-i18n="projeto3_titulo">Projeto 3: jogo da memória PW</h3>
+                <p data-i18n="projeto3_descricao">Um jogo da memória desenvolvido em HTML, CSS e JavaScript, que
+                    será
+                    implementado mais funções.</p>
+                <a href="https://github.com/BrayanMateus5/jogo-memoria.git" target="_blank" rel="noopener noreferrer"
+                    class="btn-ver-projeto">
+                    Ver Projeto
                 </a>
             </article>
-            <article class="projeto">
-                <h3>Projeto 4: Sistema de gerenciamento financeiro</h3>
-                <p>Um sistema de gerenciamento financeiro, que será implementado com funcionalidades de controle de
+            <article class="card-projeto">
+                <h3 data-i18n="projeto4_titulo">Projeto 4: Sistema de gerenciamento financeiro</h3>
+                <p data-i18n="projeto4_descricao">Um sistema de gerenciamento financeiro, que será implementado com
+                    funcionalidades de controle de
                     gastos e receitas.</p>
-                <a href="https://github.com/BrayanMateus5/sistema-financeiro.git" target="_blank">
-                    <button>Ver Projeto</button>
+                <a href="https://github.com/BrayanMateus5/sistema-financeiro.git" target="_blank"
+                    rel="noopener noreferrer" class="btn-ver-projeto">
+                    Ver Projeto
                 </a>
             </article>
         </section>
-        <section id="Trajetória">
-            <h2>Minha Trajetória</h2>
+
+        <section id="trajetoria">
+            <h2 data-i18n="trajetoria_titulo">Minha Trajetória</h2>
 
             <article class="educacao">
-                <h3>Início</h3>
+                <h3 data-i18n="trajetoria_inicio">Início</h3>
                 <ul>
                     <li>
-                        <Strong>Técnico em Informática: </Strong><br>
+                        <strong data-i18n="trajetoria_tecnico">Técnico em Informática: </strong><br>
                         Instituto Federal do Paraná (IFPR) - 2020 a 2023<br>
-                        Formado em técnico em informática, onde adquiri conhecimentos básicos de programação, redes
-                        e hardware.
                     </li>
                 </ul>
-            </article><br>
+            </article>
+
             <article class="educacao">
-                <h3>Atualmente</h3>
+                <h3 data-i18n="trajetoria_atual">Atualmente</h3>
                 <ul>
                     <li>
-                        <Strong>Bacharelado em Engenharia de Software: </Strong> <br> Instituto Federal do Paraná
+                        <strong data-i18n="trajetoria_bacharel">Bacharelado em Engenharia de Software: </strong>
+                        <br>
+                        Instituto Federal do Paraná
                         (IFPR) - 2024 - previsão de conclusão 2027<br>
-                        Seguindo na área de engenharia de software, onde estou aprofundando meus conhecimentos em
-                        desenvolvimento web, mobile e banco de dados, além de aprender sobre metodologias ágeis e
-                        boas práticas de desenvolvimento.
                     </li>
-
                 </ul>
             </article>
         </section>
     </main>
 
     <footer id="contato">
-        <h2>Entre em contato</h2>
+        <h2 data-i18n="contato_titulo">Entre em contato</h2>
 
         <form id="form-contato">
-            <input type="text" name="nome" placeholder="Seu nome" required>
-            <input type="email" name="email" placeholder="Seu email" required>
-            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-            <button type="submit">Enviar</button>
+            < <label for="nome" data-i18n="contato_nome">Nome:</label>
+                <input type="text" id="nome" name="nome" data-i18n="placeholder_nome" placeholder="Digite seu nome"
+                    required>
+
+                <label for="email" data-i18n="contato_email">Email:</label>
+                <input type="email" id="email" name="email" data-i18n="placeholder_email" placeholder="Digite seu email"
+                    required>
+
+                <label for="mensagem" data-i18n="contato_mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" data-i18n="placeholder_msg" placeholder="Digite sua mensagem"
+                    required></textarea>
+
+                <button type="submit" data-i18n="contato_enviar">Enviar</button>
         </form>
 
         <div class="redes-sociais">
-            <a href="mailto:mateusbrayan73@gmail.com" target="_blank">
-                <button>Email</button>
-            </a>
-            <a href="https://github.com/BrayanMateus5" target="_blank">
+            <a href="mailto:mateusbrayan73@gmail.com" class="btn" data-i18n="btn_email">Email</a>
+
+            <a href="https://github.com/BrayanMateus5" target="_blank" rel="noopener noreferrer" aria-label="Github">
                 <i class="fa-brands fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/brayan-mateus-5b9b1b1b3/" target="_blank">
+            <a href="https://www.linkedin.com/in/brayan-mateus-5b9b1b1b3/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin"></i>
             </a>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"> </script>
-    <script src="script.js"></script>
-    <script src="dicionario.js"></script>
+    <script type="module" src="json/dicionario.js"></script>
+    <script type="module" src="json/script.js"></script>
 </body>
 
 </html>
