@@ -1,4 +1,4 @@
-import { dicionario } from './dicionario.js';
+import dicionario from './dicionario.js';
 
 const paragrafo = document.querySelector('#sobre p');
 let textoAtual = "Estudante de Engenharia de Software, com foco em desenvolvimento web e mobile."
@@ -11,11 +11,13 @@ function digitar() {
         setTimeout(digitar, 50);
     }
 }
-/*limpa o html e chama a função*/
+/*Encima aqui é o efeito da digitação...*/
+
 if (paragrafo) {
     paragrafo.textContent = '';
     digitar();
 }
+/*Aqui ele chama a função para começar o efeito de digitação quando a página é carregada.*/
 
 /* O form*/
 const formContato = document.getElementById('form-contato');
@@ -37,41 +39,8 @@ if (formContato) {
     });
 }
 /*rolagem*/
-const menu = document.querySelector('nav');
-
-window.addEventListener('scroll', function () {
-
-    if (window.scrollY > 50) {
-        menu.style.backgroundColor = 'rgba(18, 18, 18, 1)';
-    } else {
-        menu.style.backgroundColor = 'rgba(18, 18, 0.95)';
-    }
-});
-
-/*função de troca*/
-function mudarIdioma(idiomaEscolhido) {
-    document.querySelectorAll('[data-i18n]').forEach(elemento => {
-        const chave = elemento.getAttribute('data-i18n');
-        const texto = dicionario[idiomaEscolhido][chave] || chave;
-
-        if (elemento.placeholder !== undefined) {
-            elemento.placeholder = texto;
-        } else {
-            elemento.textContent = texto;
-        }
-    });
-
-    const botoesIdioma = document.querySelectorAll('.idioma');
-    botoesIdioma.forEach(function (botao) {
-        botao.classList.remove('ativo');
-    });
-
-    /*ativa o botão*/
-    document.querySelector('.btn-idioma[data-idioma="' + idiomaEscolhido + '"]').classList.add('ativo');
-
-}
 const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', () => {
+function mostrarSecao() {
     sections.forEach(sec => {
         const top = sec.getBoundingClientRect().top;
 
@@ -79,5 +48,30 @@ window.addEventListener('scroll', () => {
             sec.classList.add('visible');
         }
     });
-});
+    window.addEventListener('scroll', mostrarSecao);
+    window.addEventListener('load', mostrarSecao);
+}
+/*função para mostrar as seções quando a página é carregada e quando o usuário rola a página.*/
 
+/*função de troca*/
+function mudarIdioma(idiomaEscolhido) {
+    document.querySelectorAll('[data-i18n]').forEach(elemento => {
+        const chave = elemento.getAttribute('data-i18n');
+        const texto = dicionario[idiomaEscolhido][chave] || chave;
+
+        if (elemento.tagName === 'INPUT' || elemento.tagName === 'TEXTAREA') {
+            elemento.placeholder = texto;
+        } else {
+            elemento.textContent = texto;
+        }
+    });
+
+    const botoesIdioma = document.querySelectorAll('.btn-idioma');
+    botoesIdioma.forEach(botao => botao.classList.remove('ativo'));
+
+    /*ativa o botão*/
+    document.querySelector('.btn-idioma[data-idioma="' + idiomaEscolhido + '"]').classList.add('ativo');
+
+}
+/*função oficial de mudar o idioma no HTML*/
+window.mudarIdioma = mudarIdioma;

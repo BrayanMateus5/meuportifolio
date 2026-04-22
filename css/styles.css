@@ -214,16 +214,16 @@ section h2::after {
     background-color: var(--bg-card);
 }
 
-.hard-skill {
+.hard-skills {
     margin-bottom: 2rem;
 }
 
-.soft-skill {
+.soft-skills {
     margin-bottom: 2rem;
 }
 
-.hard-skill h3,
-.soft-skill h3 {
+.hard-skills h3,
+.soft-skills h3 {
     margin-bottom: 1rem;
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
@@ -292,7 +292,7 @@ section h2::after {
     gap: 1rem;
 }
 
-form-contato label {
+.form-contato label {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-light);
