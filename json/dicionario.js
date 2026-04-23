@@ -17,7 +17,7 @@ const dicionario = {
 
         skills_java_descricao: "Desenvolvimento de aplicações e lógica de programação",
         skills_html_descricao: "Criação de páginas web responsivas e estilizadas",
-        skills_comunicacao: "Comunicação",
+        skills_comunicacao: "Comunicação :",
         skills_comunicacao_descricao: "Habilidade para se comunicar de forma clara e eficaz",
         skills_equipe_descricao: "Capacidade de colaborar e trabalhar bem com os outros",
         skills_trabalho_equipe: "Trabalho em equipe",
@@ -81,9 +81,9 @@ const dicionario = {
 
         skills_java_descricao: "Application development and programming logic",
         skills_html_descricao: "Creation of responsive and styled web pages",
-        skills_comunicacao: "Communication",
+        skills_comunicacao: "Communication :",
         skills_comunicacao_descricao: "Ability to communicate clearly and effectively",
-        skills_trabalho_equipe: "Teamwork",
+        skills_trabalho_equipe: "Teamwork :",
         skills_trabalho_equipe_descricao: "Ability to collaborate and work well in a team",
 
         // PROJETOS
@@ -125,4 +125,4 @@ const dicionario = {
         alerta_sucesso_texto: "Thank you,"
     }
 };
-export default dicionario; 
+export default dicionario;
